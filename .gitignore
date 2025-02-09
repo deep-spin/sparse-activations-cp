@@ -1,0 +1,11 @@
+__pycache__
+.ipynb_checkpoints
+.DS_Store
+*.egg-info
+.python-version
+validations/*
+**/__pycache__/
+**/.ipynb_checkpoints
+**/.DS_Store
+**/*.egg-info
+.python-version
