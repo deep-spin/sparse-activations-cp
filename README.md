@@ -1,4 +1,4 @@
-# Sparse Activations as Conformal Predictors".
+# Sparse Activations as Conformal Predictors.
 
 Repository containing code to reproduce the results of the paper "[Sparse Activations as Conformal Predictors](https://arxiv.org/abs/2502.14773)".
 
