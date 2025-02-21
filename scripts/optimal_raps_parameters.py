@@ -48,6 +48,14 @@ for dataset in dataset_list:
         test_proba = test_preds[cal_size:]
         cal_true_enc = test_true_enc[0:cal_size]
         test_true_enc = test_true_enc[cal_size:]
+        
+        # Split for hyperparameter change
+        cal_size_2 = np.ceil(cal_size*0.6).astype(int)
+        cal_proba_1 = cal_proba[0:cal_size_2]
+        cal_true_enc_1 = cal_true_enc[0:cal_size_2]
+        cal_proba_2 = cal_proba[cal_size_2:]
+        cal_true_enc_2 = cal_true_enc[cal_size_2:]
+
         #print(dataset+'_'+str(param)+'_'+str(seed)+'_'+str(alpha)+'_'+str(random_state))
         for k in k_list:
             if k<test_true_enc.shape[1]:
@@ -55,8 +63,8 @@ for dataset in dataset_list:
                     for alpha in alpha_list:
                         print(dataset+'_'+str(lam_reg)+'_'+str(k)+'_'+str(seed)+'_'+str(alpha)+'_'+str(random_state))
                         cp = RAPSPredictor(RAPSScore(lam_reg,k))
-                        cp.calibrate(cal_true_enc, cal_proba, alpha)
-                        avg_size, coverage = cp.evaluate(test_true_enc, test_proba)
+                        cp.calibrate(cal_true_enc_1, cal_proba_1, alpha)
+                        avg_size, coverage = cp.evaluate(cal_true_enc_2, cal_proba_2)
                         summary_results.loc[(dataset,random_state,lam_reg,alpha,k),'avg_size'] = avg_size
                         summary_results.loc[(dataset,random_state,lam_reg,alpha,k),'coverage'] = coverage
 
@@ -67,4 +75,4 @@ final_params = valid_results.groupby(['dataset','alpha','random_state']).head(1)
 final_params.sort_values(by='dataset',inplace=True)
 final_params['param'] = 'RAPS_optimal'
 
-final_params.to_csv('../data/results_analysis/raps_optimal_vit_test.csv',index=False)
+final_params.to_csv('../data/results_analysis/raps_optimal_parameters.csv',index=False)

@@ -78,4 +78,4 @@ for dataset in dataset_list:
             summary_results.loc[(dataset,random_state,alpha),'coverage'] = coverage
             summary_results.loc[(dataset,random_state,alpha),'best_lambda'] = best_l
             
-summary_results.reset_index().to_csv(f'{ROOT_DIR}/data/results_analysis/optimal_entmax.csv',index=False)
+summary_results.reset_index().to_csv(f'{ROOT_DIR}/data/results_analysis/optimal_entmax_parameters.csv',index=False)

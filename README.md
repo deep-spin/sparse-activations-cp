@@ -1,6 +1,6 @@
 # Sparse Activations as Conformal Predictors".
 
-Repository containing code to reproduce results of the paper "Sparse Activations as Conformal Predictors".
+Repository containing code to reproduce the results of the paper "[Sparse Activations as Conformal Predictors](https://arxiv.org/abs/2502.14773)".
 
 ## Setup 
 
@@ -30,9 +30,9 @@ One can download the logits of the already trained models used for the analysis 
 
 To find the optimal RAPS parameters, run `scripts/optimal_raps_parameters.py` and to find optimal *opt-entmax* parameter run `scripts/optimal_entmax_params.py`. Alternatively, download optimal parameter files from [drive](https://drive.google.com/drive/folders/1aejfKdLl--kQo6nvLpqEJNWbs01S4d2G?usp=drive_link).
 
-The notebook `notebooks/all_methods_cp.ipynb` applies conformal prediction over five different splits of the data, as described in the paper.  
+The notebook `notebooks/all_methods_cp.ipynb` applies conformal prediction over five different splits of the data, as described in the paper, and writes: set prediction arrays in folder `data/set_prediction` and a table with all coverage and average set size results (also available [here](https://drive.google.com/drive/folders/1aejfKdLl--kQo6nvLpqEJNWbs01S4d2G?usp=drive_link)).
 
 ## Reproducing paper results
 
- - Coverage and average set size analysis can be found in `notebooks/coverage_set_analysis.ipynb`
+ - Coverage and average set size analysis can be found in `notebooks/coverage_set_analysis.ipynb` 
  - Adaptiveness and coverage by set size analysis can be found in `notebooks/set_size_coverage.ipynb`
