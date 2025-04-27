@@ -36,3 +36,14 @@ The notebook `notebooks/all_methods_cp.ipynb` applies conformal prediction over 
 
  - Coverage and average set size analysis can be found in `notebooks/coverage_set_analysis.ipynb` 
  - Adaptiveness and coverage by set size analysis can be found in `notebooks/set_size_coverage.ipynb`
+
+## Citation
+[Sparse Activations as Conformal Predictors](https://arxiv.org/abs/2502.14773)
+```
+@inproceedings{campos2025sparseactivationsconformalpredictors,
+  title={Sparse Activations as Conformal Predictors},
+  author={Margarida M. Campos and João Calém and Sophia Sklaviadis and M{\'a}rio A. T. Figueiredo and Andr{\'e} F. T. Martins},
+  booktitle={International Conference on Artificial Intelligence and Statistics},
+  year={2025}
+}
+```
