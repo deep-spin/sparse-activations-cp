@@ -55,6 +55,7 @@ class ConformalPredictor():
             test_scores = self.score.get_multiple_scores(test_pred)
             test_match = test_scores<= self.q_hat
             self.test_pvalues = np.apply_along_axis(self.get_pvalue,1,test_scores)
+            self.test_scores = test_scores
 
         if disallow_empty:
             helper = np.zeros(test_pred[(test_match.sum(axis = 1)==0)].shape)
